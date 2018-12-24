@@ -7,9 +7,9 @@ class HomeScreen extends Component {
       return (
         <View style={{flex: 1}}>
           <Button
-            title="Go to team list"
-            onPress={() => navigate('list')}
-          />
+          title="Go to team list"
+          onPress={() => navigate('list')}
+        />
         </View>
       );
     }

@@ -2,7 +2,6 @@ import * as remx from 'remx';
 
 
 const initialState = {
-  loading: true,
   nbaTeamsArray: [],
 };
 
@@ -18,11 +17,6 @@ export const getters = remx.getters({
   getTeamSelected(id) {
     return state.nbaTeamsArray.find((item) => item.idTeam === id).isSelected;
   },
-
-  isLoading() {
-    return state.loading;
-  },
-
 });
 
 export const setters = remx.setters({
@@ -37,9 +31,14 @@ export const setters = remx.setters({
     state.loading = false;
   },
   setTeamSelected(id, selected) {
+    console.log(Date.now());
+    state.nbaTeamsArray.sort((a, b) => b.idTeam - a.idTeam);
+    console.log(Date.now());
     const teamArr = [...state.nbaTeamsArray];
     const teamIndex = teamArr.findIndex((item) => item.idTeam === id);
-    teamArr[teamIndex].isSelected = selected;
+    const team = Object.assign({}, teamArr[teamIndex]);
+    team.isSelected = selected;
+    teamArr[teamIndex] = team;
     state.nbaTeamsArray = teamArr;
   }
 });

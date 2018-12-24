@@ -12,13 +12,11 @@ class TeamListItem extends Component {
         this.props.toggleSelected(this.props.nbaTeamData.idTeam);
     };
 
-  shouldComponentUpdate(nextProps) {
-    const {teamName, isSelected} = this.props.nbaTeamData;
-    console.log('isSelected', isSelected, nextProps.nbaTeamData.isSelected);
-    console.log('nextProps.nbaTeamData.isSelected !== isSelected', nextProps.nbaTeamData.isSelected);
-    return (nextProps.nbaTeamData.teamName !== teamName)
-      || (nextProps.nbaTeamData.isSelected !== isSelected);
-  }
+  // shouldComponentUpdate(nextProps) {
+  //   const {teamName, isSelected} = this.props.nbaTeamData;
+  //   return (nextProps.nbaTeamData.teamName !== teamName)
+  //     || (nextProps.nbaTeamData.isSelected !== isSelected);
+  // }
 
 
   render() {

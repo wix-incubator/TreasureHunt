@@ -8,6 +8,10 @@ import * as store from '../stores/list_screen/Store'
 
 class ListAScreen extends Component {
 
+  static navigationOptions = {
+    header: null ,
+  };
+
   componentDidMount() {
     // setInterval(() => {
     action.fetchNbaTeamsList();
@@ -55,7 +59,6 @@ class ListAScreen extends Component {
 
 function mapStateToProps(ownProps) {
   return {
-    isLoading: store.getters.isLoading(),
     nbaTeamsArray: store.getters.getTeamArr(),
   };
 }
