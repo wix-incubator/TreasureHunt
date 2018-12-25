@@ -5,6 +5,7 @@ import {View} from 'react-native-ui-lib';
 import TeamListItem from '../view/TeamListItem';
 import * as action from '../stores/list_screen/Actions';
 import * as store from '../stores/list_screen/Store'
+import {Constants} from "expo";
 
 class ListScreen extends Component {
 
@@ -13,15 +14,17 @@ class ListScreen extends Component {
   };
 
   componentDidMount() {
-    // setInterval(() => {
     action.fetchNbaTeamsList();
-    // }, 1000);
+    setInterval(() => {
+      action.fetchNbaTeamsList();
+    }, 15000);
   }
+
 
   render() {
     const {navigate} = this.props.navigation;
     return (
-      <View style={{flex: 1}}>
+      <View style={{flex: 1, paddingTop: Constants.statusBarHeight}}>
         <Button
           style={{flex: 0.1}}
           title="Go Home"
@@ -52,6 +55,7 @@ class ListScreen extends Component {
 function mapStateToProps(ownProps) {
   return {
     nbaTeamsArray: store.getters.getTeamArr(),
+    importantProp: store.getters.getDummyProp(),
   };
 }
 

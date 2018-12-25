@@ -2,7 +2,6 @@ import * as nbaService from '../../services/NbaService';
 import * as store from './Store'
 
 export function setItemSelected(id) {
-  console.log('setItemSelected', id);
   if (store.getters.getTeamSelected(id)) {
     store.setters.setTeamSelected(id, false);
   } else {
@@ -10,6 +9,9 @@ export function setItemSelected(id) {
   }
 }
 
+export function setDummyProp(dummy) {
+  store.setters.setDummyProp(dummy);
+}
 
 export async function fetchNbaTeamsList() {
   try {

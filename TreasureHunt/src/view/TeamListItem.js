@@ -1,9 +1,8 @@
-import React, {Component} from 'react'
+import React, {PureComponent} from 'react'
 import {StyleSheet} from 'react-native'
 import {Text, Card, View, Image, Colors} from 'react-native-ui-lib'
-import {countRender} from "../CountRender";
 
-class TeamListItem extends Component {
+class TeamListItem extends PureComponent {
     constructor(props) {
       super(props);
       console.log('new TeamListItem');
@@ -12,6 +11,7 @@ class TeamListItem extends Component {
         this.props.toggleSelected(this.props.nbaTeamData.idTeam);
     };
 
+    // implement your on shouldComponentUpdate to remove redundant renders. pureComponent not help here
   // shouldComponentUpdate(nextProps) {
   //   const {teamName, isSelected} = this.props.nbaTeamData;
   //   return (nextProps.nbaTeamData.teamName !== teamName)
@@ -21,7 +21,6 @@ class TeamListItem extends Component {
 
   render() {
         const {idTeam, strTeamLogo, strTeam} = this.props.nbaTeamData;
-        countRender();
         return (
             <Card
                 onPress={this._onPress}
