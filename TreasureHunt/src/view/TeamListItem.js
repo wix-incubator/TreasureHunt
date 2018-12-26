@@ -17,7 +17,7 @@ class TeamListItem extends PureComponent {
 
 
   render() {
-    countRender();
+    // countRender();
     const {idTeam, strTeamLogo, strTeam} = this.props.nbaTeamData;
     return (
       <Card

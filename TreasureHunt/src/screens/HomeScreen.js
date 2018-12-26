@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import {View, Button} from 'react-native';
 import * as action from '../stores/list_screen/Actions';
-import * as store from '../stores/list_screen/Store'
 
 class HomeScreen extends Component {
 
