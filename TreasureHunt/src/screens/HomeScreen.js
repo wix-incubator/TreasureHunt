@@ -8,7 +8,7 @@ class HomeScreen extends Component {
   componentDidMount() {
     setInterval(() => {
       action.setDummyProp({})
-    }, 1000);
+    }, 5000);
   }
 
   render() {

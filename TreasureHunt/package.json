@@ -1,6 +1,7 @@
 {
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
+    "react-devtool": "react-devtools",
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
@@ -10,6 +11,7 @@
     "expo": "^31.0.2",
     "importent-lyb": "0.0.5",
     "react": "16.5.1",
+    "react-addons-perf": "^15.4.2",
     "react-native": "0.57.1",
     "react-native-ui-lib": "^3.10.0",
     "react-navigation": "^3.0.9",
@@ -18,7 +20,8 @@
   "devDependencies": {
     "babel-preset-expo": "^5.0.0",
     "detox": "^9.0.6",
-    "jest": "^23.6.0"
+    "jest": "^23.6.0",
+    "react-devtools": "^3.4.3"
   },
   "jest": {
     "preset": "react-native",

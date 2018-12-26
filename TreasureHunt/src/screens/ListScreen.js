@@ -23,6 +23,7 @@ class ListScreen extends Component {
 
   render() {
     const {navigate} = this.props.navigation;
+    console.log('render');
     return (
       <View style={{flex: 1, paddingTop: Constants.statusBarHeight}}>
         <Button
