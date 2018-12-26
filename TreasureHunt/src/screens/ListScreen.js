@@ -5,7 +5,6 @@ import {View} from 'react-native-ui-lib';
 import TeamListItem from '../view/TeamListItem';
 import * as action from '../stores/list_screen/Actions';
 import * as store from '../stores/list_screen/Store'
-import {Constants} from "expo";
 
 class ListScreen extends Component {
 
@@ -25,7 +24,7 @@ class ListScreen extends Component {
     const {navigate} = this.props.navigation;
     console.log('render');
     return (
-      <View style={{flex: 1, paddingTop: Constants.statusBarHeight}}>
+      <View style={{flex: 1, paddingTop: 20}}>
         <Button
           style={{flex: 0.1}}
           title="Go Home"
