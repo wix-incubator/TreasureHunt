@@ -17,10 +17,6 @@ class PureScreen extends Component {
     }
   }
 
-  componentDidMount() {
-    action.fetchNbaTeamsList();
-  }
-
   increase = () => {
     const increase = hardWork(this.state.counter);
     this.setState({
