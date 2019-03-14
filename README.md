@@ -13,6 +13,7 @@ ImagesScreen
 ------------
 
 * Increase Me button is verry laggish, fix it.
+* Improve performance.
 
 
 ListScreen
