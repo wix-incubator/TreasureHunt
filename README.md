@@ -20,3 +20,17 @@ ListScreen
 ----------
 
 * Improve the list performance, try to lower the amount of re-renderings.
+
+
+DownloadProgressScreen
+----------------------
+
+Add animation to make emulated download progress more fluid. 
+
+##### Current implementation 
+
+![Initial Animation](gifs/AnimationInitial.gif)
+
+##### Desired Behaviour:
+
+![Resulting Animation](gifs/AnimationResult.gif)
