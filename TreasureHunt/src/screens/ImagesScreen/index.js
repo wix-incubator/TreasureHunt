@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import {Text, Button, StyleSheet, View} from 'react-native'
-import * as action from '../stores/list_screen/Actions';
 import TwoImageRaw from '../view/TwoImageRaw'
 
 class ImagesScreen extends Component {
