@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
-import {Image, View} from 'react-native-ui-lib'
-import {ScrollView} from 'react-native'
+import {ScrollView, Image, View} from 'react-native'
 
 let counter = -1;
 const lightImg = <Image

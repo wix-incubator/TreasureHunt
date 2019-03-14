@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {Text, Button, StyleSheet, View} from 'react-native'
-import TwoImageRaw from '../view/TwoImageRaw'
+import TwoImageRaw from './TwoImageRaw'
 
 class ImagesScreen extends Component {
 

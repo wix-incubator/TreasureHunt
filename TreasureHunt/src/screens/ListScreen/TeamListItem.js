@@ -1,6 +1,5 @@
 import React, {PureComponent} from 'react'
-import {StyleSheet} from 'react-native'
-import {Text, Card, View, Image, Colors} from 'react-native-ui-lib'
+import {Text, Card, View, TouchableOpacity, Image, StyleSheet} from 'react-native'
 
 class TeamListItem extends PureComponent {
   handlePress = () => {
@@ -10,12 +9,12 @@ class TeamListItem extends PureComponent {
   render() {
     const {idTeam, strTeamLogo, strTeam} = this.props.nbaTeamData;
     return (
-      <Card
+      <TouchableOpacity
         onPress={this.handlePress}
         key={idTeam}
         style={styles.container}
         elevation={4}
-        shadow>
+      >
         <View style={{backgroundColor: this.props.nbaTeamData.isSelected ? '#aaaaaa' : '#eeeeee'}}>
           <View>
             <Image
@@ -29,7 +28,7 @@ class TeamListItem extends PureComponent {
             {strTeam}
           </Text>
         </View>
-      </Card>
+      </TouchableOpacity>
     )
   }
 }
@@ -52,7 +51,7 @@ const styles = StyleSheet.create({
     borderBottomColor: 'black',
     borderBottomWidth: 1,
     marginTop: 16,
-    borderColor: Colors.blue10,
+    borderColor: 'blue',
   },
   text: {
     fontSize: 14,
