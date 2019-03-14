@@ -3,8 +3,8 @@ Add animation to make emulated download progress more fluid.
 
 ##### Current implementation 
 
-![Font Problem](gifs/AnimationInitial.gif)
+![Initial Animation](gifs/AnimationInitial.gif)
 
 ##### Desired Behaviour:
 
-![Font Problem](gifs/AnimationResult.gif)
+![Resulting Animation](gifs/AnimationResult.gif)
