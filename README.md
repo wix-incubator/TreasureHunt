@@ -20,6 +20,7 @@ ListScreen
 ----------
 
 * Improve the list performance, try to lower the amount of re-renderings.
+* Add players amount under each team (You can use src/services/NbaService.js for getting players) 
 
 
 DownloadProgressScreen

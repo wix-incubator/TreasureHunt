@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import {ScrollView, Button, View} from 'react-native'
-import {connect} from 'remx'
 import TeamListItem from './TeamListItem';
 import * as nbaService from '../../services/NbaService';
 
