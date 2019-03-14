@@ -5,12 +5,12 @@ let counter = -1;
 const lightImg = <Image
   style={{alignSelf: 'stretch', width:'50%', height: '100%'}}
   resizeMode='cover'
-  source={{uri: 'https://dantser.ru/wp-content/uploads/2017/02/1-hd-150x150.png'}}/>;
+  source={{uri: 'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=150'}}/>;
 
 const heavyImg = <Image
   style={{alignSelf: 'stretch', width:'50%', height: '100%'}}
   resizeMode='cover'
-  source={{uri: 'https://static.wixstatic.com/media/01ecb7_a1ee476febb44855b962610a38a1d3f1~mv2_d_3392_2544_s_4_2.png'}}/>;
+  source={{uri: 'http://gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=2000'}}/>;
 
 class TwoImageRaw extends Component {
 
