@@ -3,8 +3,8 @@ import {createStackNavigator, createAppContainer} from 'react-navigation';
 import App from 'importent-lyb'
 import HomeScreen from './src/screens/HomeScreen'
 import ListScreen from "./src/screens/ListScreen";
-import PureScreen from "./src/screens/PureScreen";
-import FreezeScreen from "./src/screens/FreezeScreen";
+import ImagesScreen from "./src/screens/ImagesScreen";
+import AnimatedButtonScreen from "./src/screens/AnimatedButtonScreen";
 
 if (__DEV__) {
   require('react-devtools');
@@ -13,8 +13,8 @@ if (__DEV__) {
 const index = createStackNavigator({
   home: {screen: HomeScreen},
   list: {screen: ListScreen},
-  pure: {screen: PureScreen},
-  freeze: {screen: FreezeScreen},
+  images: {screen: ImagesScreen},
+  animatedButton: {screen: AnimatedButtonScreen},
 });
 
 export default createAppContainer(index);

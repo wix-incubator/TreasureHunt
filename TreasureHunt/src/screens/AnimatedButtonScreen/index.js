@@ -1,10 +1,8 @@
 import React, {Component} from 'react'
-import {Text, Button, StyleSheet} from 'react-native'
-import {View} from 'react-native-ui-lib';
-import * as action from '../stores/list_screen/Actions';
-import {hardWork} from "../Utils";
+import {Text, Button, StyleSheet, View} from 'react-native'
+import {hardWork} from "../../Utils";
 
-class PureScreen extends Component {
+class AnimatedButtonScreen extends Component {
 
   static navigationOptions = {
     header: null,
@@ -36,7 +34,7 @@ class PureScreen extends Component {
         />
         <Text style={styles.text}>{counter}</Text>
         <Button
-          title="increase Me"
+          title="Increase Me"
           onPress={this.increase}
         />
       </View>
@@ -51,4 +49,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default PureScreen
+export default AnimatedButtonScreen

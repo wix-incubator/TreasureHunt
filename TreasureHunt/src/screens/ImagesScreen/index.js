@@ -1,20 +1,16 @@
 import React, {Component} from 'react'
-import {Text, Button, StyleSheet} from 'react-native'
-import {View} from 'react-native-ui-lib';
+import {Text, Button, StyleSheet, View} from 'react-native'
 import * as action from '../stores/list_screen/Actions';
 import TwoImageRaw from '../view/TwoImageRaw'
 
-class PureScreen extends Component {
+class ImagesScreen extends Component {
 
   static navigationOptions = {
     header: null ,
   };
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      counter: 0,
-    }
+  state = {
+    counter: 0,
   }
 
   increase = () => {
@@ -54,4 +50,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default PureScreen
+export default ImagesScreen

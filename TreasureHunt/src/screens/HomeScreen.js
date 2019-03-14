@@ -1,31 +1,30 @@
 import React, {Component} from 'react'
 import {View, Button} from 'react-native';
-import * as action from '../stores/list_screen/Actions';
 
 class HomeScreen extends Component {
-
-  componentDidMount() {
-    setInterval(() => {
-      action.setDummyProp({})
-    }, 5000);
-  }
-
   render() {
     const {navigate} = this.props.navigation;
     return (
       <View style={{flex: 1}}>
-        <Button
-          title="Go to team list"
-          onPress={() => navigate('list')}/>
-        <View style={{marginTop: 8}}>
+        <View>
           <Button
-            title="Go to pure screen"
-            onPress={() => navigate('pure')}/>
+            title="Go to team list"
+            onPress={() => navigate('list')}
+          />
         </View>
-        <View style={{marginTop: 8}}>
+
+        <View>
           <Button
-            title="Go to simple screen"
-            onPress={() => navigate('freeze')}/>
+            title="Go to animated button screen"
+            onPress={() => navigate('animatedButton')}
+          />
+        </View>
+
+        <View>
+          <Button
+            title="Go to images screen"
+            onPress={() => navigate('images')}
+          />
         </View>
       </View>
     );
