@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {Button, StyleSheet, NativeModules} from 'react-native'
 import {View, Text} from 'react-native-ui-lib';
-import {hardWork, createAsyncLock} from "../Utils";
+import {hardWork} from "../Utils";
 
 class PureScreen extends Component {
 
