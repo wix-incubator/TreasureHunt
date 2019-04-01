@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import {Text, Button, StyleSheet} from 'react-native'
 import {View} from 'react-native-ui-lib';
-import * as action from '../stores/list_screen/Actions';
 import TwoImageRaw from '../view/TwoImageRaw'
 
 class PureScreen extends Component {
@@ -28,7 +27,7 @@ class PureScreen extends Component {
     const {navigate} = this.props.navigation;
     const counter = (this.state.counter > 0) ? this.state.counter : 'increase Me!!!';
     return (
-      <View style={{flex: 1, paddingTop: 20}}>
+      <View style={styles.container}>
         <Button
           style={{flex: 0.1}}
           title="Go Home"
@@ -51,6 +50,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginTop: 10,
     alignSelf: 'center'
+  },
+  container: {
+    flex: 1,
+    paddingTop: 20
   }
 });
 

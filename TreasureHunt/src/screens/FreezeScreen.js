@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
-import {Text, Button, StyleSheet} from 'react-native'
-import {View} from 'react-native-ui-lib';
-import * as action from '../stores/list_screen/Actions';
-import {hardWork} from "../Utils";
+import {Button, StyleSheet} from 'react-native'
+import {View, Text} from 'react-native-ui-lib';
+import {hardWork, createAsyncLock} from "../Utils";
 
+const asyncLock = createAsyncLock();
 class PureScreen extends Component {
 
   static navigationOptions = {
@@ -14,10 +14,32 @@ class PureScreen extends Component {
     super(props);
     this.state = {
       counter: 0,
+      promiseOne: 'p1 wait...',
+      promiseTwo: 'p2 wait...',
+      promiseThree: 'p3 wait...'
     }
   }
 
+  _shotPromises = async () => {
+    await this._runP1();
+    await this._runP2();
+    await this._runP3();
+  }
+
+  _runP1 = () => {
+
+  };
+
+  _runP2 = () => {
+
+  };
+
+  _runP3 = () => {
+
+  };
+
   increase = () => {
+    this._shotPromises();
     const increase = hardWork(this.state.counter);
     this.setState({
       counter: increase
@@ -28,17 +50,30 @@ class PureScreen extends Component {
     const {navigate} = this.props.navigation;
     const counter = (this.state.counter > 0) ? this.state.counter : 'increase Me!!!';
     return (
-      <View center style={{flex: 1, paddingTop: 20}}>
-        <Button
-          style={{flex: 0.1}}
-          title="Go Home"
-          onPress={() => navigate('home')}
-        />
-        <Text style={styles.text}>{counter}</Text>
-        <Button
-          title="increase Me"
-          onPress={this.increase}
-        />
+      <View flex style={styles.container}>
+        <View center>
+          <Button
+
+            title="Go Home"
+            onPress={() => navigate('home')}
+          />
+          <Text style={styles.text}>{counter}</Text>
+          <Button
+            title="increase Me"
+            onPress={this.increase}
+          />
+        </View>
+        <View flex style={styles.promisesContainer}>
+          <Text flex center>
+            {this.state.promiseOne}
+          </Text>
+          <Text flex center>
+            {this.state.promiseTwo}
+          </Text>
+          <Text flex center>
+            {this.state.promiseThree}
+          </Text>
+        </View>
       </View>
     );
   }
@@ -48,6 +83,16 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 16,
     fontWeight: 'bold',
+  },
+  container: {
+    paddingTop: 20
+  },
+  promisesContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    marginTop: 16,
+    borderWidth: 0.5,
+    borderColor: '#d6d7da'
   }
 });
 
