@@ -14,11 +14,11 @@ class ListScreen extends Component {
 
   componentDidMount() {
     action.fetchNbaTeamsList();
-    setInterval(() => {
-      action.fetchNbaTeamsList();
-    }, 15000);
   }
 
+  _keyExtractor = (item) => {
+    return item.idTeam
+  }
 
   render() {
     const {navigate} = this.props.navigation;
@@ -35,7 +35,7 @@ class ListScreen extends Component {
           showsVerticalScrollIndicator={false}
           numColumns={2}
           data={this.props.nbaTeamsArray}
-          keyExtractor={(item) => item.idTeam}
+          keyExtractor={this._keyExtractor}
           renderItem={({item}) => {
             return (
               <TeamListItem
