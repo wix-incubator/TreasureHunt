@@ -1,9 +1,8 @@
 import React, {Component} from 'react'
-import {Button, StyleSheet} from 'react-native'
+import {Button, StyleSheet, NativeModules} from 'react-native'
 import {View, Text} from 'react-native-ui-lib';
 import {hardWork, createAsyncLock} from "../Utils";
 
-const asyncLock = createAsyncLock();
 class PureScreen extends Component {
 
   static navigationOptions = {
@@ -26,16 +25,25 @@ class PureScreen extends Component {
     await this._runP3();
   }
 
-  _runP1 = () => {
-
+  _runP1 = async () => {
+    await NativeModules.HardWorkerModule.work();
+    this.setState({
+      promiseOne: 'p1 finish'
+    })
   };
 
-  _runP2 = () => {
-
+  _runP2 = async () => {
+    await NativeModules.HardWorkerModule.work();
+    this.setState({
+      promiseTwo: 'p2 finish'
+    })
   };
 
-  _runP3 = () => {
-
+  _runP3 = async () => {
+    await NativeModules.HardWorkerModule.work();
+    this.setState({
+      promiseThree: 'p3 finish'
+    })
   };
 
   increase = () => {
