@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
-import {Button, StyleSheet, NativeModules} from 'react-native'
+import {Button, StyleSheet} from 'react-native'
 import {View, Text} from 'react-native-ui-lib';
-import {hardWork} from "../Utils";
+import {hardWork, nativeHardWork} from "../Utils";
 
-class PureScreen extends Component {
+class FreezeScreen extends Component {
 
   static navigationOptions = {
     header: null,
@@ -13,45 +13,45 @@ class PureScreen extends Component {
     super(props);
     this.state = {
       counter: 0,
-      promiseOne: 'p1 wait...',
-      promiseTwo: 'p2 wait...',
-      promiseThree: 'p3 wait...'
+      promiseOne: 'P1 wait...',
+      promiseTwo: 'P2 wait...',
+      promiseThree: 'P3 wait...'
     }
   }
 
   _shotPromises = async () => {
     await this._runP1();
-    await this._runP2();
-    await this._runP3();
-  }
+  };
 
   _runP1 = async () => {
-    await NativeModules.HardWorkerModule.work();
+    await nativeHardWork();
     this.setState({
-      promiseOne: 'p1 finish'
-    })
+      promiseOne: 'P1 finish'
+    });
+    setTimeout(async () => await this._runP2());
   };
 
   _runP2 = async () => {
-    await NativeModules.HardWorkerModule.work();
+    await nativeHardWork();
     this.setState({
-      promiseTwo: 'p2 finish'
-    })
+      promiseTwo: 'P2 finish'
+    });
+    setTimeout(async () => await this._runP3());
   };
 
   _runP3 = async () => {
-    await NativeModules.HardWorkerModule.work();
+    await nativeHardWork();
     this.setState({
-      promiseThree: 'p3 finish'
+      promiseThree: 'P3 finish'
     })
   };
 
   increase = () => {
-    this._shotPromises();
     const increase = hardWork(this.state.counter);
     this.setState({
       counter: increase
     });
+    setTimeout(this._shotPromises, 1000);
   };
 
   render() {
@@ -61,7 +61,6 @@ class PureScreen extends Component {
       <View flex style={styles.container}>
         <View center>
           <Button
-
             title="Go Home"
             onPress={() => navigate('home')}
           />
@@ -104,4 +103,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default PureScreen
+export default FreezeScreen

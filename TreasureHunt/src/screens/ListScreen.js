@@ -3,8 +3,8 @@ import {FlatList, Button} from 'react-native'
 import {connect} from 'remx'
 import {View} from 'react-native-ui-lib';
 import TeamListItem from '../view/TeamListItem';
-import * as action from '../stores/list_screen/Actions';
-import * as store from '../stores/list_screen/Store'
+import * as action from '../stores/list_screen/actions';
+import * as store from '../stores/list_screen/store'
 
 class ListScreen extends Component {
 

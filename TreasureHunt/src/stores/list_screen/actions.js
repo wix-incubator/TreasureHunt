@@ -1,5 +1,5 @@
 import * as nbaService from '../../services/NbaService';
-import * as store from './Store'
+import * as store from './store'
 
 export function setItemSelected(id) {
   if (store.getters.getTeamSelected(id)) {
