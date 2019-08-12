@@ -3,7 +3,7 @@ import * as remx from 'remx';
 
 const initialState = {
   nbaTeamsArray: [],
-  dummy: {}
+  dummy: 1
 };
 
 const state = remx.state(initialState);

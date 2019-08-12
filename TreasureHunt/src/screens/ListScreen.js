@@ -20,9 +20,17 @@ class ListScreen extends Component {
     return item.idTeam
   }
 
+  _renderItem = ({item}) => {
+    return <TeamListItem
+      nbaTeamData={item}
+      toggleSelected={(id) => {
+        action.setItemSelected(id);
+      }}
+    />
+  }
+
   render() {
     const {navigate} = this.props.navigation;
-    console.log('render');
     return (
       <View style={{flex: 1, paddingTop: 20}}>
         <Button
@@ -36,16 +44,7 @@ class ListScreen extends Component {
           numColumns={2}
           data={this.props.nbaTeamsArray}
           keyExtractor={this._keyExtractor}
-          renderItem={({item}) => {
-            return (
-              <TeamListItem
-                nbaTeamData={item}
-                toggleSelected={(id) => {
-                  action.setItemSelected(id);
-                }}
-              />
-            )
-          }}
+          renderItem={this._renderItem}
         />
       </View>
     );

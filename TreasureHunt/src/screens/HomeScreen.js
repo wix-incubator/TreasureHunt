@@ -4,11 +4,20 @@ import * as action from '../stores/list_screen/actions';
 
 class HomeScreen extends Component {
 
+  intervalId;
   componentDidMount() {
-    setInterval(() => {
-      action.setDummyProp({})
+    this.intervalId = setInterval(() => {
+      action.setDummyProp(Math.random())
     }, 5000);
   }
+
+  disableInterval = () => {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+      this.intervalId = undefined;
+    }
+  }
+
 
   render() {
     const {navigate} = this.props.navigation;
@@ -24,8 +33,13 @@ class HomeScreen extends Component {
         </View>
         <View style={{marginTop: 8}}>
           <Button
-            title="Go to simple screen"
+            title="Go to freeze screen"
             onPress={() => navigate('freeze')}/>
+        </View>
+        <View style={{marginTop: 8}}>
+          <Button
+            title="Click just when you have told"
+            onPress={this.disableInterval}/>
         </View>
       </View>
     );
